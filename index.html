@@ -15,7 +15,11 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
 .topbar{display:flex;align-items:center;gap:12px;padding:10px 18px;background:rgba(6,8,15,.96);
   border-bottom:1px solid rgba(0,212,255,.15);box-shadow:0 2px 24px rgba(0,0,0,.5);z-index:10;flex-shrink:0;flex-wrap:wrap}
 .logo{font-weight:900;font-size:1.05rem;letter-spacing:.02em;white-space:nowrap;
-  background:linear-gradient(90deg,var(--neon),var(--pur),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+  background:linear-gradient(90deg,var(--neon),var(--pur),var(--gold),var(--neon),var(--pur),var(--gold));
+  background-size:300% 100%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  animation:logoMarquee 4s linear infinite}
+@keyframes logoMarquee{0%{background-position:0% 50%}100%{background-position:-300% 50%}}
+@supports not (-webkit-background-clip:text){.logo{-webkit-text-fill-color:initial;color:var(--neon);animation:none;background:none}}
 .live-pill{display:inline-flex;align-items:center;gap:4px;background:rgba(0,255,136,.08);border:1px solid rgba(0,255,136,.25);border-radius:20px;padding:2px 9px;font-size:.58rem;color:var(--grn);letter-spacing:.08em}
 .live-dot{width:5px;height:5px;border-radius:50%;background:var(--grn);animation:blink .9s ease infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
