@@ -34,7 +34,7 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
 .kstat:last-child{border:none}
 .kstat-l{font-size:.52rem;color:var(--sub);text-transform:uppercase;letter-spacing:.09em}
 .kstat-v{font-size:1.2rem;font-weight:800;line-height:1.1;font-variant-numeric:tabular-nums}
-.kstat-u{font-size:.52rem;color:var(--sub);margin-top:1px}
+.kstat-u{font-size:.64rem;color:var(--neon);font-weight:700;margin-top:1px}
 .kstat-bar{position:absolute;bottom:0;left:0;height:2px;width:0;transition:width 1.4s cubic-bezier(.16,1,.3,1)}
 
 /* ── BODY (left + right) ── */
@@ -127,7 +127,7 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
 .lb-av{width:28px;height:28px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.7rem;color:#fff;flex-shrink:0}
 .lb-info{flex:1;min-width:0}
 .lb-name{font-weight:600;font-size:.78rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.lb-meta{font-size:.56rem;color:var(--sub)}
+.lb-meta{font-size:.68rem;color:var(--neon);font-weight:700}
 .lb-dots{display:flex;gap:3px;flex-wrap:nowrap}
 .ld{width:5px;height:5px;border-radius:2px;flex-shrink:0}
 .lb-score{font-size:.65rem;font-weight:800;color:var(--sub);white-space:nowrap}
@@ -389,7 +389,7 @@ function buildLB(){
     const metOk=[isOk(avgDtc,G.dtc,true),isOk(avgRes,G.response,false),isOk(avgSp,G.self_perf,false),isOk(avgFtf,G.ftf,false)];
     const tradeDots=metOk.map((ok,i)=>`<div class="ld" style="background:${ok?'var(--grn)':'var(--red)'}"></div>`).join('');
     const tradeActive=selTradeAvg===role&&selTech===null;
-    html+=`<div class="lb-section-hdr" data-role="${role}">${RI[role]} ${role} <span style="color:var(--sub);font-size:.52rem;margin-left:auto">${totalWos} WOs</span></div>`;
+    html+=`<div class="lb-section-hdr" data-role="${role}">${RI[role]} ${role} <span style="color:var(--neon);font-weight:700;font-size:.64rem;margin-left:auto">${totalWos} WOs</span></div>`;
     // ── Trade average row ──────────────────────────────────────
     html+=`<div class="lb-trade-row ${tradeActive?'active':''}" data-role="${role}" onclick="selectTradeAvg('${role}')">
       <div class="lb-trade-ico" style="background:${RC[role]}22;border-color:${RC[role]}44;color:${RC[role]}">Σ</div>
