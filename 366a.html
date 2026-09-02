@@ -305,7 +305,6 @@ const D={"periods":{"30":[{"name":"Richard Sanchez","role":"FE","wos":2,"wos_1p"
 const RC={GM:'#0077ee',HVACR:'#00ccaa',FE:'#ff8800'};
 const RI={GM:'🔧',HVACR:'❄️',FE:'🍽️'};
 const RL={GM:'GM Technicians',HVACR:'HVACR Technicians',FE:'Food Equipment Technicians'};
-const RANK_LABEL={GM:'GM Tech Ranking',HVACR:'HV Tech Ranking',FE:'FE Tech Ranking'};
 const EQ={GM:['Cart Mover','Auto Scrubber','Compactor','Baler','Pallet Jack','Floor Scrubber'],
   HVACR:['Refrigeration Unit','Walk-in Cooler','Walk-in Freezer','HVAC System','Ice Machine','Display Cooler'],
   FE:['Commercial Fryer','Deck Oven','Rotisserie','Deli Slicer','Hot Display Case','Combi Oven']};
@@ -386,7 +385,7 @@ function buildLB(){
     html+=`<div class="lb-trade-row ${tradeActive?'active':''}" data-role="${role}" onclick="selectTradeAvg('${role}')">
       <div class="lb-trade-ico" style="background:${RC[role]}22;border-color:${RC[role]}44;color:${RC[role]}">Σ</div>
       <div class="lb-info">
-        <div class="lb-name" style="color:${RC[role]}">${RANK_LABEL[role]}</div>
+        <div class="lb-name" style="color:${RC[role]}">Trade Average</div>
         <div class="lb-meta">${grp.length} techs · ${totalWos} WOs combined</div>
       </div>
       <div style="display:flex;flex-direction:column;align-items:flex-end;gap:4px">
@@ -475,7 +474,7 @@ function selectTradeAvg(role){
         ${RI[role]}
       </div>
       <div>
-        <div class="sp-name">${RANK_LABEL[role]}</div>
+        <div class="sp-name">${RL[role]} — Trade Average</div>
         <div class="sp-role">${grp.length} technicians · ${totWos} total WOs · ${tot1p} 1P + ${tot3p} 3P</div>
         ${allOk?'<div class="sp-allok">🌟 All trade goals met</div>':''}
       </div>
